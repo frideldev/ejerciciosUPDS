@@ -1,0 +1,30 @@
+.rent-now {
+    width: 76px;
+    position: relative;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    flex-shrink: 0;
+}
+.button-rental {
+    width: 100%;
+    position: relative;
+    border-radius: 30px;
+    background-color: #edccaf;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+    color: #6e411a;
+    font-family: 'Plus Jakarta Sans';
+}
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <style>
+        .completed { text-decoration: line-through; color: gray; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="newTask" placeholder="Nueva tarea">
+    <button id="addTask">Agregar</button>
+    <ul id="taskList"></ul>
+    <div>
+        <button id="filterAll">Todas</button>
+        <button id="filterActive">Activas</button>
+        <button id="filterCompleted">Completadas</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
