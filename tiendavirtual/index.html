@@ -10,9 +10,23 @@
   <header>
     <h1>Virtual Store</h1>
     <input type="text" id="search-input" placeholder="Search products">
+    <div id="cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+    </div>
   </header>
-
   <main>
+    <div id="product-list"></div>
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: $<span id="cart-total">0</span></p>
+        <button id="checkout-button">Checkout</button>
+      </div>
+    </div>
+  </main>
     <div id="product-list"></div>
   </main>
 </body>
