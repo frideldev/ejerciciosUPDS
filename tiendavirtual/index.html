@@ -33,7 +33,15 @@
 <script>
    const listaProductos=document.getElementById('product-list') 
    const buscador=document.getElementById('search-input') 
-   const fetchProductos=async()=>{
+   const cartIcon=document.getElementById('cart-icon')
+   const cartModal=document.getElementById('cart-modal')
+   const closeButton=document.querySelector('.close-button')
+   const cartItems=document.getElementById('cart-items')
+   const cartTotal=document.getElementById('cart-total')
+   const checkoutButton=document.getElementById('checkout-button')
+   const cartCount=document.getElementById('cart-count')
+
+   const fetchProducicontos=async()=>{
     try{
         const respuesta=await fetch('https://fakestoreapi.com/products');
         const productos=await respuesta.json();
@@ -60,6 +68,9 @@
 
         const addToCartButton = document.createElement('button');
         addToCartButton.textContent = 'Adicionar al Carrito Compras';
+
+        addToCartButton.addEventListener('click',()=>addToCart(productos))
+
         elementoProducto.appendChild(elementoImagen)
         elementoProducto.appendChild(nameElement)
         elementoProducto.appendChild(priceElement);
@@ -77,5 +88,23 @@
 
    fetchProductos().then(RenderizarProductos);
    buscador.addEventListener('input',filtrarProductos)
+
+  //Funcion para adicionar datos al carrito de compras
+  const addToCart=(producto)=>{
+    let cart =JSON.parse(localStorage).getItem('cart')||[];
+    const existenciaItem=cart.find(item=>item.id===producto.id)
+    if(existenciaItem){
+      existenciaItem.quantity++;
+    }else{
+      cart.push({...producto,quantity:1})
+    }
+    localStorage.setItem('cart',JSON.stringify(cart))
+    updateCartUI();
+  }
+
+  const updateCartUI=()=>{
+    
+  }
+
 </script>
 </html>
