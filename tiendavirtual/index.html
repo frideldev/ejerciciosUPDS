@@ -119,8 +119,20 @@
       cartItem.appendChild(precioElemento)
       cartItem.appendChild(totalElemento)
       cartItems.appendChild(cartItem)
+      total+=item.price*item.quantity
     })
+    cartTotal.textContent=total.toFixed(2)
+    cartCount.textContent=cart.length;
   }
+
+  cartIcon.addEventListener('click',()=>cartModal.style.display='block')
+  closeButton.addEventListener('click',()=>cartModal.style.display='none')
+  window.addEventListener('click',(event)=>{
+    if(event.target==cartModal){
+      cartModal.style.display='none'
+    }
+  })
+  updateCartUI();
 
 </script>
 </html>
