@@ -103,7 +103,23 @@
   }
 
   const updateCartUI=()=>{
-    
+    let cart =JSON.parse(localStorage.getItem('cart')) || [];
+    cartItems.innerHTML='';
+    let total=0
+    cart.forEach(item=>{
+      const cartItem=document.createElement('div')
+      cartItem.classList.add('cart-item')
+      const nombreElemento=document.createElement('h3')
+      nombreElemento.textContent=item.title;
+      const precioElemento=document.createElement('p')
+      precioElemento.textContent=`Bs${item.price}x${item.quantity}`
+      const totalElemento=document.createElement('p')
+      totalElemento.textContent=`Bs ${(item.price*item.quantity).toFixed(2)}`
+      cartItem.appendChild(nombreElemento)
+      cartItem.appendChild(precioElemento)
+      cartItem.appendChild(totalElemento)
+      cartItems.appendChild(cartItem)
+    })
   }
 
 </script>
