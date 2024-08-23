@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.columna{
+    width: 200px;
+    min-height: 300px;
+    border: 1px solid #ccc;
+    margin:10px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.tarea{
+   background-color: #f0f0f0; 
+   padding: 10px;
+   margin: 5px 0;
+   cursor: move;
+}
+</style>
+</head>
+<body>
+<div id="kanban">
+    <div id="porHacer" class="columna">
+        <h2>Por Hacer</h2>
+    </div>
+    <div id="enProceso" class="columna">
+        <h2>En Proceso</h2>
+    </div>
+    <div id="hecho" class="columna" >
+        <h2>Hecho / Completado</h2>
+    </div>
+
+</div>  
+<script src="kanban.js"></script>  
+</body>
+</html>
