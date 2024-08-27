@@ -41,6 +41,29 @@
         $('.box').fade
     })
    })
+$('#loadPosts').on('click',function(){
+    $.ajax({
+        url:'https://jsonplaceholder.typicode.com/posts',
+        method:'GET',
+        success:function(data){
+            const $post=$('#posts');
+            $post.empty();
+            $.each(data.slice(0,5),function(index,post){
+                $post.append(`
+                <div class="post">
+                    <h3>${post.title}</h3>
+                    <p>${post.body}</p>
+                    </div>
+                `);
+            })
+        },
+        error:function(error){
+            console.error('Error al cargar los posts',error)
+        }
+
+    })
+})
+
   </script>  
 </body>
 </html>
